@@ -1,20 +1,16 @@
-import { ProjectCategory } from "@/components/projects/project-category";
+import { ProjectExplorer } from "@/components/projects/project-explorer";
 import { SectionContainer } from "@/components/sections/section-container";
-import { projectCategories } from "@/data/projects";
+import { projects } from "@/data/projects";
 
 export function Projects() {
   return (
     <SectionContainer
       id="projects"
-      eyebrow="Work"
+      eyebrow="Selected Work"
       title="Projects"
-      description="Backend, full-stack, RAG, and agentic AI projects organized as reusable project data."
+      description="Selected projects across full-stack development, RAG systems, GenAI applications, and AI agents."
     >
-      <div className="space-y-12">
-        {projectCategories.map((category) => (
-          <ProjectCategory key={category.title} category={category} />
-        ))}
-      </div>
+      <ProjectExplorer projects={projects} />
     </SectionContainer>
   );
 }

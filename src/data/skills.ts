@@ -2,6 +2,8 @@ import {
   SiDocker,
   SiExpress,
   SiFastapi,
+  SiC,
+  SiCplusplus,
   SiGithub,
   SiGooglegemini,
   SiHuggingface,
@@ -55,6 +57,8 @@ export const skillGroups: SkillGroup[] = [
     surface: "rgba(56, 189, 248, 0.1)",
     skills: [
       { name: "Python", icon: SiPython, color: "#ffd43b", surface: "rgba(255, 212, 59, 0.14)" },
+      { name: "C", icon: SiC, color: "#a8b9cc", surface: "rgba(168, 185, 204, 0.12)" },
+      { name: "C++", icon: SiCplusplus, color: "#00599c", surface: "rgba(0, 89, 156, 0.16)" },
       { name: "JavaScript", icon: SiJavascript, color: "#f7df1e", surface: "rgba(247, 223, 30, 0.12)" },
       { name: "TypeScript", icon: SiTypescript, color: "#3178c6", surface: "rgba(49, 120, 198, 0.16)" },
       { name: "Java", icon: SiOpenjdk, color: "#f97316", surface: "rgba(249, 115, 22, 0.12)" },

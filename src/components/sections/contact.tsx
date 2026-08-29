@@ -3,7 +3,6 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { SiGithub } from "react-icons/si";
 
 import { SectionContainer } from "@/components/sections/section-container";
-import { buttonVariants } from "@/components/ui/button";
 
 const contactLinks = [
   {
@@ -11,7 +10,6 @@ const contactLinks = [
     value: "nikhilcheemala00@gmail.com",
     href: "mailto:nikhilcheemala00@gmail.com",
     icon: Mail,
-    prominent: true,
   },
   {
     label: "LinkedIn",
@@ -55,28 +53,20 @@ export function Contact() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className={
-                  item.prominent
-                    ? buttonVariants({
-                        size: "lg",
-                        className:
-                          "w-full justify-between px-4 text-base sm:w-auto sm:min-w-96",
-                      })
-                    : "group flex items-center justify-between gap-4 rounded-xl px-1 py-3 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/45"
-                }
+                className="group flex items-center gap-4 rounded-xl border border-white/[0.06] bg-secondary/18 px-4 py-3.5 text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:bg-secondary/30 hover:text-foreground hover:shadow-lg hover:shadow-cyan-500/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/45"
               >
-                <span className="flex min-w-0 items-center gap-3">
+                <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-white/[0.07] bg-background/35 text-primary transition-colors group-hover:border-primary/25 group-hover:bg-primary/10">
                   <Icon
-                    className={item.prominent ? "size-5" : "size-4 text-primary"}
+                    className="size-4"
                     aria-hidden="true"
                   />
-                  <span className="min-w-0">
-                    <span className="block text-xs font-medium uppercase text-muted-foreground">
-                      {item.label}
-                    </span>
-                    <span className="block truncate font-medium">
-                      {item.value}
-                    </span>
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                    {item.label}
+                  </span>
+                  <span className="block truncate text-sm font-semibold text-[#dbeafe] sm:text-base">
+                    {item.value}
                   </span>
                 </span>
               </a>

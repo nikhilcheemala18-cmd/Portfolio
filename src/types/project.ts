@@ -7,6 +7,12 @@ export type ProjectCardVariant =
   | "visual-right"
   | "compact";
 
+export type ProjectFilter =
+  | "all"
+  | "full-stack"
+  | "genai-rag"
+  | "ai-agents";
+
 export type ProjectImage = {
   src: string;
   alt: string;

@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   BookOpen,
   ExternalLink,
   MonitorPlay,
@@ -16,128 +17,103 @@ import type { Project } from "@/types/project";
 
 type ProjectCardProps = {
   project: Project;
+  mode?: "featured" | "standard";
 };
 
 const actionMeta = [
-  { key: "githubUrl", label: "GitHub", icon: SiGithub },
-  { key: "liveUrl", label: "Live Demo", icon: ExternalLink },
+  { key: "githubUrl", label: "GitHub", icon: SiGithub, iconOnly: true },
+  { key: "liveUrl", label: "Live Demo", icon: ExternalLink, iconOnly: true },
   { key: "documentationUrl", label: "Documentation", icon: BookOpen },
   { key: "videoUrl", label: "Video / Demo", icon: MonitorPlay },
   { key: "demoUrl", label: "Demo", icon: PlayCircle },
 ] as const;
 
-export function ProjectCard({ project }: ProjectCardProps) {
-  const isFeatured = project.featured || project.variant === "featured";
-  const visibleHighlights = project.highlights.slice(0, isFeatured ? 6 : 4);
-  const remainingHighlights = project.highlights.length - visibleHighlights.length;
+export function ProjectCard({ project, mode = "standard" }: ProjectCardProps) {
+  const isFeatured = mode === "featured";
+  const visibleTechnologies = project.technologies.slice(0, isFeatured ? 4 : 5);
+  const remainingTechnologies =
+    project.technologies.length - visibleTechnologies.length;
   const accent = project.accent ?? "#3b82f6";
+  const categoryLabel = getProjectCategoryLabel(project.category);
 
   return (
     <Card
       className={cn(
-        "relative rounded-xl border-white/[0.08] bg-[linear-gradient(145deg,color-mix(in_srgb,var(--project-accent)_10%,transparent),rgba(16,24,39,0.88)_38%,rgba(8,15,29,0.92))] p-0 shadow-xl shadow-black/18 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--project-accent)] hover:shadow-2xl hover:shadow-black/28",
-        isFeatured && "border-[color:var(--project-accent)] ring-1 ring-white/[0.08]"
+        "group/project relative h-full rounded-xl border-white/[0.08] bg-[linear-gradient(150deg,color-mix(in_srgb,var(--project-accent)_8%,transparent),rgba(15,23,42,0.84)_34%,rgba(8,15,29,0.94))] p-0 shadow-lg shadow-black/14 ring-1 ring-white/[0.025] transition-all duration-300 hover:-translate-y-0.5 hover:border-[color:var(--project-accent)] hover:shadow-xl hover:shadow-black/24",
+        isFeatured
+          ? "overflow-visible"
+          : "overflow-hidden"
       )}
       style={{ "--project-accent": accent } as CSSProperties}
     >
-      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--project-accent),transparent)] opacity-75" />
-      <CardContent className="space-y-6 p-5 sm:p-6">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div className="min-w-0 space-y-3">
+      <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--project-accent),transparent)] opacity-70" />
+      <CardContent className="flex h-full flex-col gap-4 p-4 sm:p-4">
+        <ProjectGallery
+          images={project.images}
+          title={project.title}
+          category={project.category}
+          accent={accent}
+          mediaPosition={project.mediaPosition}
+          compact
+        />
+
+        <div className="flex flex-1 flex-col gap-4">
+          <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
               <Badge
                 variant="outline"
-                className="border-white/[0.08] bg-background/30 text-[#bfdbfe]"
+                className="h-6 border-white/[0.08] bg-background/35 text-[color:var(--project-accent)]"
               >
-                {project.category}
+                {categoryLabel}
               </Badge>
-              {isFeatured ? (
-                <Badge className="bg-primary/15 text-[#dbeafe]">Featured</Badge>
-              ) : null}
             </div>
             <div>
               <h3
                 className={cn(
-                  "font-semibold leading-tight text-foreground",
-                  isFeatured ? "text-2xl" : "text-xl"
+                  "font-heading font-semibold leading-tight text-foreground",
+                  isFeatured ? "text-[1.2rem]" : "text-lg"
                 )}
               >
                 {project.title}
               </h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              <p className="mt-2 overflow-hidden text-sm leading-6 text-muted-foreground [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
                 {project.shortDescription}
               </p>
             </div>
           </div>
-          {project.status ? (
-            <span className="w-fit shrink-0 rounded-md border border-white/[0.08] bg-background/35 px-3 py-1 text-[0.68rem] font-semibold uppercase text-muted-foreground">
-              {project.status.replace("-", " ")}
-            </span>
-          ) : null}
-        </div>
 
-        {project.fullDescription ? (
-          <p className="text-sm leading-6 text-muted-foreground">
-            {project.fullDescription}
-          </p>
-        ) : null}
-
-        <div className="flex flex-wrap gap-2">
-          {project.technologies.map((technology) => (
-            <Badge
-              key={technology}
-              variant="secondary"
-            className="border border-white/[0.07] bg-secondary/48 text-[#dbeafe]"
-            >
-              {technology}
-            </Badge>
-          ))}
-        </div>
-
-        <ProjectGallery
-          images={project.images}
-          title={project.title}
-          accent={accent}
-          mediaPosition={project.mediaPosition}
-        />
-
-        <div>
-          <p className="text-xs font-semibold uppercase text-primary">
-            Selected Highlights
-          </p>
-          <ul className="mt-3 grid gap-2 text-sm leading-6 text-muted-foreground sm:grid-cols-2">
-            {visibleHighlights.map((point) => (
-              <li key={point} className="flex gap-2">
-                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary/70" />
-                <span>{point}</span>
-              </li>
-            ))}
-            {remainingHighlights > 0 ? (
-              <li
-                key="remaining-highlights"
-                className="flex gap-2 text-[#cbd5e1]"
+          <div className="flex flex-wrap gap-2">
+            {visibleTechnologies.map((technology) => (
+              <Badge
+                key={technology}
+                variant="secondary"
+                className="h-6 border border-white/[0.07] bg-secondary/42 px-2 font-mono text-[0.67rem] text-[#dbeafe]"
               >
-                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary/70" />
-                <span>{remainingHighlights} more implementation details</span>
-              </li>
+                {technology}
+              </Badge>
+            ))}
+            {remainingTechnologies > 0 ? (
+              <Badge
+                variant="outline"
+                className="h-6 border-white/[0.08] bg-background/25 font-mono text-[0.68rem] text-muted-foreground"
+              >
+                +{remainingTechnologies}
+              </Badge>
             ) : null}
-          </ul>
+          </div>
+
+          <div className="mt-auto pt-1">
+            <ProjectActions project={project} />
+          </div>
         </div>
-
-        {project.repository ? (
-          <p className="rounded-lg border border-border/55 bg-background/28 px-3 py-2 font-mono text-xs text-muted-foreground">
-            {project.repository}
-          </p>
-        ) : null}
-
-        <ProjectActions project={project} />
       </CardContent>
     </Card>
   );
 }
 
-function ProjectActions({ project }: ProjectCardProps) {
+function ProjectActions({ project }: Pick<ProjectCardProps, "project">) {
   const actions = actionMeta
+    .filter((action) => ["githubUrl", "liveUrl"].includes(action.key))
     .map((action) => ({
       ...action,
       href: project[action.key],
@@ -149,7 +125,20 @@ function ProjectActions({ project }: ProjectCardProps) {
   }
 
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap items-center gap-2">
+      <button
+        type="button"
+        className="group/quick inline-flex min-h-9 items-center gap-2 rounded-md border border-[color:var(--project-accent)]/55 bg-[color-mix(in_srgb,var(--project-accent)_10%,transparent)] px-3 text-sm font-semibold text-[color:var(--project-accent)] transition-colors hover:bg-[color-mix(in_srgb,var(--project-accent)_16%,transparent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
+        aria-label={`Quick view for ${project.title} coming soon`}
+        title="Quick view coming soon"
+      >
+        Quick View
+        <ArrowRight
+          className="size-4 transition-transform group-hover/quick:translate-x-0.5"
+          aria-hidden="true"
+        />
+      </button>
+
       {actions.map((action) => {
         const Icon = action.icon;
 
@@ -159,16 +148,38 @@ function ProjectActions({ project }: ProjectCardProps) {
             href={action.href}
             target="_blank"
             rel="noreferrer"
-            className={buttonVariants({
-              variant: action.key === "githubUrl" ? "default" : "outline",
-              size: "sm",
-            })}
+            className={cn(
+              buttonVariants({
+                variant: "outline",
+                size: "icon-lg",
+              }),
+              "border-white/[0.1] bg-background/30 text-foreground hover:border-[color:var(--project-accent)] hover:text-[color:var(--project-accent)]"
+            )}
+            aria-label={`Open ${project.title} ${action.label}`}
+            title={action.label}
           >
-            {action.label}
             <Icon className="size-4" aria-hidden="true" />
           </a>
         );
       })}
     </div>
   );
+}
+
+function getProjectCategoryLabel(category: string) {
+  const text = category.toLowerCase();
+
+  if (text.includes("agent")) {
+    return "AI Agent";
+  }
+
+  if (text.includes("rag") || text.includes("generative")) {
+    return "GenAI / RAG";
+  }
+
+  if (text.includes("full-stack")) {
+    return "Full-Stack";
+  }
+
+  return category;
 }
