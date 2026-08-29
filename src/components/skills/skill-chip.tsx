@@ -11,7 +11,7 @@ export function SkillChip({ skill }: SkillChipProps) {
 
   return (
     <span
-      className="group/skill inline-flex min-h-11 items-center gap-3 rounded-lg border border-white/[0.07] bg-background/35 px-3 py-2.5 text-sm font-medium text-[#dbeafe] shadow-sm shadow-black/10 transition-colors duration-200 hover:border-white/16 hover:bg-secondary/55"
+      className="group/skill inline-flex min-h-11 items-center gap-3 rounded-lg border border-white/[0.07] bg-background/45 px-3 py-2.5 text-sm font-medium text-[#e6edf3] shadow-sm shadow-black/20 transition-colors duration-200 hover:border-white/16 hover:bg-secondary/65"
       style={
         {
           "--skill-color": skill.color ?? "#60a5fa",

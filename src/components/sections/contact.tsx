@@ -38,7 +38,7 @@ export function Contact() {
           <p className="text-sm font-semibold uppercase tracking-normal text-primary">
             Nikhil Cheemala
           </p>
-          <p className="max-w-xl font-heading text-2xl font-semibold leading-snug text-[#dbeafe] md:text-3xl">
+          <p className="max-w-xl font-heading text-2xl font-semibold leading-snug text-[#e6edf3] md:text-3xl">
             Backend & Generative AI Engineer
           </p>
         </div>
@@ -65,7 +65,7 @@ export function Contact() {
                   <span className="block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                     {item.label}
                   </span>
-                  <span className="block truncate text-sm font-semibold text-[#dbeafe] sm:text-base">
+                  <span className="block truncate text-sm font-semibold text-[#e6edf3] sm:text-base">
                     {item.value}
                   </span>
                 </span>

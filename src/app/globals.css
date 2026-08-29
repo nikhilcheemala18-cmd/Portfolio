@@ -55,23 +55,23 @@
     sans-serif;
   --font-technical:
     "JetBrains Mono", "SFMono-Regular", "Cascadia Code", Consolas, monospace;
-  --background: #080f1d;
-  --foreground: #f8fafc;
-  --card: #101827;
-  --card-foreground: #f8fafc;
-  --popover: #101827;
-  --popover-foreground: #f8fafc;
+  --background: #070707;
+  --foreground: #f2f2f2;
+  --card: #111111;
+  --card-foreground: #f2f2f2;
+  --popover: #111111;
+  --popover-foreground: #f2f2f2;
   --primary: #38bdf8;
-  --primary-foreground: #06111f;
-  --secondary: #142033;
-  --secondary-foreground: #e0f2fe;
-  --muted: #111b2d;
-  --muted-foreground: #9caec4;
+  --primary-foreground: #031014;
+  --secondary: #171717;
+  --secondary-foreground: #e4eef7;
+  --muted: #121212;
+  --muted-foreground: #9dabb8;
   --accent: #f59e0b;
-  --accent-foreground: #111827;
+  --accent-foreground: #111111;
   --destructive: #ef4444;
-  --border: #213048;
-  --input: #26364f;
+  --border: #24272d;
+  --input: #2a2d33;
   --ring: #38bdf8;
   --chart-1: #38bdf8;
   --chart-2: #2563eb;
@@ -79,53 +79,53 @@
   --chart-4: #38bdf8;
   --chart-5: #22c55e;
   --radius: 0.65rem;
-  --surface-page: #080f1d;
-  --surface-raised: #101827;
-  --surface-subtle: #0c1424;
-  --surface-muted: #111b2d;
+  --surface-page: #070707;
+  --surface-raised: #111111;
+  --surface-subtle: #0d0d0d;
+  --surface-muted: #151515;
   --accent-warm: #f59e0b;
   --accent-cyan: #38bdf8;
-  --sidebar: #101827;
-  --sidebar-foreground: #f8fafc;
+  --sidebar: #101010;
+  --sidebar-foreground: #f2f2f2;
   --sidebar-primary: #3b82f6;
-  --sidebar-primary-foreground: #f8fafc;
-  --sidebar-accent: #1e293b;
+  --sidebar-primary-foreground: #f2f2f2;
+  --sidebar-accent: #171717;
   --sidebar-accent-foreground: #dbeafe;
-  --sidebar-border: #263244;
+  --sidebar-border: #2a2d33;
   --sidebar-ring: #60a5fa;
 }
 
 .dark {
-  --background: #080f1d;
-  --foreground: #f8fafc;
-  --card: #101827;
-  --card-foreground: #f8fafc;
-  --popover: #101827;
-  --popover-foreground: #f8fafc;
+  --background: #070707;
+  --foreground: #f2f2f2;
+  --card: #111111;
+  --card-foreground: #f2f2f2;
+  --popover: #111111;
+  --popover-foreground: #f2f2f2;
   --primary: #38bdf8;
-  --primary-foreground: #06111f;
-  --secondary: #142033;
-  --secondary-foreground: #e0f2fe;
-  --muted: #111b2d;
-  --muted-foreground: #9caec4;
+  --primary-foreground: #031014;
+  --secondary: #171717;
+  --secondary-foreground: #e4eef7;
+  --muted: #121212;
+  --muted-foreground: #9dabb8;
   --accent: #f59e0b;
-  --accent-foreground: #111827;
+  --accent-foreground: #111111;
   --destructive: #ef4444;
-  --border: #213048;
-  --input: #26364f;
+  --border: #24272d;
+  --input: #2a2d33;
   --ring: #38bdf8;
   --chart-1: #38bdf8;
   --chart-2: #2563eb;
   --chart-3: #f59e0b;
   --chart-4: #38bdf8;
   --chart-5: #22c55e;
-  --sidebar: #101827;
-  --sidebar-foreground: #f8fafc;
+  --sidebar: #101010;
+  --sidebar-foreground: #f2f2f2;
   --sidebar-primary: #38bdf8;
-  --sidebar-primary-foreground: #06111f;
-  --sidebar-accent: #142033;
-  --sidebar-accent-foreground: #e0f2fe;
-  --sidebar-border: #213048;
+  --sidebar-primary-foreground: #031014;
+  --sidebar-accent: #171717;
+  --sidebar-accent-foreground: #e4eef7;
+  --sidebar-border: #24272d;
   --sidebar-ring: #38bdf8;
 }
 
@@ -136,12 +136,12 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(circle at 78% 4%, rgb(56 189 248 / 0.13), transparent 21rem),
-      radial-gradient(circle at 10% 24%, rgb(37 99 235 / 0.1), transparent 24rem),
-      radial-gradient(circle at 62% 86%, rgb(245 158 11 / 0.055), transparent 22rem),
-      linear-gradient(180deg, rgb(8 15 29 / 0), rgb(12 20 36 / 0.58) 44%, rgb(8 15 29) 100%),
-      linear-gradient(to right, rgb(148 163 184 / 0.035) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(148 163 184 / 0.03) 1px, transparent 1px);
+      radial-gradient(circle at 78% 4%, rgb(56 189 248 / 0.09), transparent 22rem),
+      radial-gradient(circle at 10% 24%, rgb(37 99 235 / 0.06), transparent 25rem),
+      radial-gradient(circle at 62% 86%, rgb(245 158 11 / 0.035), transparent 22rem),
+      linear-gradient(180deg, rgb(5 5 5 / 0), rgb(12 12 13 / 0.62) 44%, rgb(5 5 5) 100%),
+      linear-gradient(to right, rgb(148 163 184 / 0.022) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(148 163 184 / 0.02) 1px, transparent 1px);
     background-attachment: fixed;
     background-size: auto, auto, auto, auto, 44px 44px, 44px 44px;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";

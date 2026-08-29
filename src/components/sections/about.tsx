@@ -29,7 +29,7 @@ export function About() {
             systems, agent workflows, API development, tool orchestration,
             retrieval architecture, and production-style backend engineering.
           </p>
-          <p className="border-l-2 border-primary/70 pl-5 text-lg font-medium leading-8 text-[#dbeafe]">
+          <p className="border-l-2 border-primary/70 pl-5 text-lg font-medium leading-8 text-[#e6edf3]">
             Building reliable software systems where backend engineering, data,
             and AI capabilities work together.
           </p>

@@ -41,13 +41,13 @@ export function ProjectGallery({
     return (
       <div
         className={cn(
-          "relative -mx-1 overflow-hidden rounded-lg border border-white/[0.07] bg-[#08111f] shadow-inner shadow-black/20",
+          "relative -mx-1 overflow-hidden rounded-lg border border-white/[0.07] bg-[#090909] shadow-inner shadow-black/30",
           compact ? "h-32 sm:h-36" : "h-40"
         )}
         data-media-position={mediaPosition}
         style={{ "--media-accent": accent } as CSSProperties}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_12%,color-mix(in_srgb,var(--media-accent)_24%,transparent),transparent_42%),linear-gradient(135deg,rgba(15,23,42,0.18),rgba(2,6,23,0.35))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_12%,color-mix(in_srgb,var(--media-accent)_20%,transparent),transparent_42%),linear-gradient(135deg,rgba(18,18,19,0.2),rgba(3,3,3,0.48))]" />
         <div className="absolute inset-x-6 top-3 h-px bg-[linear-gradient(90deg,transparent,var(--media-accent),transparent)] opacity-55" />
         <div className="absolute right-3 top-3 flex size-8 items-center justify-center rounded-md border border-white/[0.08] bg-white/[0.04] text-[color:var(--media-accent)]">
           <PreviewIcon className="size-4" aria-hidden="true" />
@@ -55,7 +55,7 @@ export function ProjectGallery({
 
         <div
           className={cn(
-            "absolute rounded-lg border border-white/[0.08] bg-[#0f172a]/88 shadow-2xl shadow-black/20 transition-transform duration-300 group-hover/project:-translate-y-1",
+            "absolute rounded-lg border border-white/[0.08] bg-[#111111]/90 shadow-2xl shadow-black/30 transition-transform duration-300 group-hover/project:-translate-y-1",
             mediaPosition === "left"
               ? "bottom-3 left-3 right-10 top-7"
               : mediaPosition === "right"
@@ -89,7 +89,7 @@ export function ProjectGallery({
                 </div>
               ))}
             </div>
-            <div className="relative overflow-hidden rounded-md border border-white/[0.06] bg-[#020617]/70 p-2">
+            <div className="relative overflow-hidden rounded-md border border-white/[0.06] bg-[#050505]/80 p-2">
               <div className="absolute inset-x-4 top-1/2 h-px bg-[color:var(--media-accent)]/40" />
               <div className="absolute inset-y-4 left-1/2 w-px bg-[color:var(--media-accent)]/25" />
               <div className="grid h-full grid-cols-2 gap-2">

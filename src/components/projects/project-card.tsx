@@ -39,7 +39,7 @@ export function ProjectCard({ project, mode = "standard" }: ProjectCardProps) {
   return (
     <Card
       className={cn(
-        "group/project relative h-full rounded-xl border-white/[0.08] bg-[linear-gradient(150deg,color-mix(in_srgb,var(--project-accent)_8%,transparent),rgba(15,23,42,0.84)_34%,rgba(8,15,29,0.94))] p-0 shadow-lg shadow-black/14 ring-1 ring-white/[0.025] transition-all duration-300 hover:-translate-y-0.5 hover:border-[color:var(--project-accent)] hover:shadow-xl hover:shadow-black/24",
+        "group/project relative h-full rounded-xl border-white/[0.08] bg-[linear-gradient(150deg,color-mix(in_srgb,var(--project-accent)_7%,transparent),rgba(18,18,19,0.88)_34%,rgba(6,6,7,0.96))] p-0 shadow-lg shadow-black/28 ring-1 ring-white/[0.025] transition-all duration-300 hover:-translate-y-0.5 hover:border-[color:var(--project-accent)] hover:shadow-xl hover:shadow-black/38",
         isFeatured
           ? "overflow-visible"
           : "overflow-hidden"
@@ -87,7 +87,7 @@ export function ProjectCard({ project, mode = "standard" }: ProjectCardProps) {
               <Badge
                 key={technology}
                 variant="secondary"
-                className="h-6 border border-white/[0.07] bg-secondary/42 px-2 font-mono text-[0.67rem] text-[#dbeafe]"
+                className="h-6 border border-white/[0.07] bg-secondary/55 px-2 font-mono text-[0.67rem] text-[#e4e9ef]"
               >
                 {technology}
               </Badge>

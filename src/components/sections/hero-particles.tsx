@@ -339,14 +339,14 @@ export function HeroParticles() {
 
   return (
     <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_48%,rgba(79,209,255,0.18),transparent_22rem),radial-gradient(circle_at_18%_80%,rgba(136,170,255,0.11),transparent_20rem),radial-gradient(circle_at_64%_18%,rgba(179,136,255,0.13),transparent_18rem),linear-gradient(135deg,rgba(5,11,24,0.86),rgba(8,15,29,0.52)_45%,rgba(3,7,18,0.9))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_48%,rgba(79,209,255,0.13),transparent_22rem),radial-gradient(circle_at_18%_80%,rgba(136,170,255,0.08),transparent_20rem),radial-gradient(circle_at_64%_18%,rgba(179,136,255,0.09),transparent_18rem),linear-gradient(135deg,rgba(3,3,3,0.9),rgba(8,8,9,0.54)_45%,rgba(2,2,3,0.94))]" />
       <canvas
         ref={canvasRef}
         id="hero-particle-network"
         className="pointer-events-auto absolute inset-0 h-full w-full opacity-95"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_45%,rgba(8,15,29,0.52),transparent_23rem),radial-gradient(circle_at_72%_46%,rgba(8,15,29,0.38),transparent_20rem),linear-gradient(90deg,rgba(8,15,29,0.66),rgba(8,15,29,0.16)_50%,rgba(8,15,29,0.52))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_45%,rgba(5,5,5,0.54),transparent_23rem),radial-gradient(circle_at_72%_46%,rgba(6,6,7,0.36),transparent_20rem),linear-gradient(90deg,rgba(5,5,5,0.66),rgba(6,6,7,0.14)_50%,rgba(5,5,5,0.52))]" />
     </div>
   );
 }

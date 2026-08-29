@@ -13,7 +13,7 @@ export function SkillCard({ group }: SkillCardProps) {
 
   return (
     <Card
-      className="relative rounded-xl border-white/[0.07] bg-[linear-gradient(145deg,var(--skill-surface),rgba(16,24,39,0.62)_36%,rgba(8,15,29,0.68))] p-0 shadow-sm shadow-black/10 ring-0 transition-all duration-200 hover:border-[var(--skill-accent)] hover:bg-card/78 hover:shadow-lg hover:shadow-black/16"
+      className="relative rounded-xl border-white/[0.07] bg-[linear-gradient(145deg,var(--skill-surface),rgba(18,18,19,0.72)_36%,rgba(8,8,9,0.82))] p-0 shadow-sm shadow-black/25 ring-0 transition-all duration-200 hover:border-[var(--skill-accent)] hover:bg-card/90 hover:shadow-lg hover:shadow-black/28"
       style={
         {
           "--skill-accent": group.accent,

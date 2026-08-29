@@ -62,7 +62,7 @@ export function CodingProfileCard({ profile }: CodingProfileCardProps) {
 
   return (
     <Card
-      className="relative rounded-xl border-white/[0.08] bg-[linear-gradient(145deg,var(--profile-surface),rgba(16,24,39,0.86)_42%,rgba(8,15,29,0.9))] p-0 shadow-lg shadow-black/16 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--profile-accent)] hover:shadow-xl hover:shadow-black/22"
+      className="relative rounded-xl border-white/[0.08] bg-[linear-gradient(145deg,var(--profile-surface),rgba(18,18,19,0.9)_42%,rgba(6,6,7,0.96))] p-0 shadow-lg shadow-black/28 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--profile-accent)] hover:shadow-xl hover:shadow-black/36"
       style={
         {
           "--profile-accent": meta.accent,

@@ -93,16 +93,16 @@ const graphLinks = [
 const proofItems = ["Backend Systems", "GenAI Applications", "Full-Stack Projects"];
 
 const accentClasses: Record<GraphNode["accent"], string> = {
-  blue: "border-blue-400/30 bg-blue-400/10 text-blue-200 shadow-blue-500/10",
-  cyan: "border-cyan-300/30 bg-cyan-300/10 text-cyan-100 shadow-cyan-400/10",
+  blue: "border-blue-400/35 bg-blue-400/8 text-blue-100 shadow-blue-500/10",
+  cyan: "border-cyan-300/35 bg-cyan-300/8 text-cyan-50 shadow-cyan-400/10",
   purple:
-    "border-violet-300/30 bg-violet-300/10 text-violet-100 shadow-violet-400/10",
+    "border-violet-300/35 bg-violet-300/8 text-violet-100 shadow-violet-400/10",
 };
 
 export function Hero() {
   return (
     <section id="hero" className="relative overflow-hidden scroll-mt-20">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[38rem] bg-[radial-gradient(circle_at_18%_16%,rgba(56,189,248,0.12),transparent_24rem),radial-gradient(circle_at_78%_22%,rgba(139,92,246,0.11),transparent_22rem)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[38rem] bg-[radial-gradient(circle_at_18%_16%,rgba(56,189,248,0.08),transparent_24rem),radial-gradient(circle_at_78%_22%,rgba(139,92,246,0.07),transparent_22rem)]" />
       <HeroParticles />
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-18 md:px-8 md:py-26 lg:grid-cols-[1fr_0.95fr]">
         <div className="relative z-10 max-w-3xl">
@@ -113,12 +113,12 @@ export function Hero() {
             Backend, full-stack, and{" "}
             <span className="text-primary">GenAI systems</span> engineer.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#c8d4e5] md:text-xl md:leading-9">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#cfd6df] md:text-xl md:leading-9">
             I build reliable backend systems, full-stack applications, and
             AI-powered products across APIs, databases, RAG pipelines,
             LLM-powered workflows, and agentic systems.
           </p>
-          <p className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#cbd5e1]">
+          <p className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#cdd5df]">
             <MapPin className="size-4 text-primary" aria-hidden="true" />
             Hyderabad, India
           </p>
@@ -126,7 +126,7 @@ export function Hero() {
             {proofItems.map((item) => (
               <span
                 key={item}
-                className="rounded-md border border-white/[0.08] bg-secondary/28 px-3 py-1.5 text-xs font-semibold text-[#cbd5e1]"
+                className="rounded-md border border-white/[0.08] bg-secondary/34 px-3 py-1.5 text-xs font-semibold text-[#d7dde5]"
               >
                 {item}
               </span>
@@ -180,7 +180,7 @@ function HeroNetworkVisual() {
 
   return (
     <div
-      className="relative z-10 min-h-[24rem] overflow-hidden rounded-xl border border-white/[0.08] bg-[linear-gradient(145deg,rgba(15,23,42,0.82),rgba(8,15,29,0.94))] shadow-xl shadow-black/20 ring-1 ring-white/[0.025] md:min-h-[30rem]"
+      className="relative z-10 min-h-[24rem] overflow-hidden rounded-xl border border-white/[0.08] bg-[linear-gradient(145deg,rgba(18,18,19,0.88),rgba(6,6,7,0.96))] shadow-xl shadow-black/35 ring-1 ring-white/[0.025] md:min-h-[30rem]"
       onPointerMove={handlePointerMove}
       onPointerLeave={() => setCursor((current) => ({ ...current, active: false }))}
       aria-hidden="true"
@@ -195,7 +195,7 @@ function HeroNetworkVisual() {
         }
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--cursor-x)_var(--cursor-y),rgba(56,189,248,0.18),transparent_16rem)] transition-opacity duration-300" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(148_163_184/0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgb(148_163_184/0.035)_1px,transparent_1px)] bg-[size:34px_34px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(148_163_184/0.032)_1px,transparent_1px),linear-gradient(to_bottom,rgb(148_163_184/0.028)_1px,transparent_1px)] bg-[size:34px_34px]" />
       </div>
 
       <div className="absolute left-5 top-5 rounded-md border border-white/[0.08] bg-background/35 px-3 py-2">
