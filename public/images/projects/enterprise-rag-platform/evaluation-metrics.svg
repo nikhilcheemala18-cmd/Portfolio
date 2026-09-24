@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise RAG Platform evaluation metrics</title>
+  <desc id="desc">Evaluation metrics from the controlled Enterprise RAG benchmark: ten evaluated questions, recall, precision, MRR, source grounding, and latency.</desc>
+  <defs>
+    <radialGradient id="bg" cx="74%" cy="18%" r="70%">
+      <stop offset="0%" stop-color="#123a56" stop-opacity=".38"/>
+      <stop offset="48%" stop-color="#080d12" stop-opacity=".82"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101820"/>
+      <stop offset="100%" stop-color="#08090b"/>
+    </linearGradient>
+    <style>
+      text{font-family:Inter,Segoe UI,Arial,sans-serif}
+      .eyebrow{font-size:18px;font-weight:800;letter-spacing:.18em;fill:#38bdf8;text-transform:uppercase}
+      .title{font-size:52px;font-weight:760;letter-spacing:-.03em;fill:#f5f7fb}
+      .body{font-size:22px;fill:#9aa9bb}
+      .metric{font-size:54px;font-weight:780;letter-spacing:-.04em;fill:#f8fafc}
+      .label{font-size:18px;font-weight:760;letter-spacing:.12em;fill:#7dd3fc;text-transform:uppercase}
+      .note{font-size:18px;fill:#9aa9bb}
+      .card{fill:url(#card);stroke:#243244;stroke-width:1.4}
+      .barBg{fill:#111827}
+      .bar{fill:#38bdf8}
+      .warm{fill:#fbbf24}
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <text x="120" y="118" class="eyebrow">Evaluation Snapshot</text>
+  <text x="120" y="184" class="title">Controlled Enterprise RAG Benchmark</text>
+  <text x="120" y="232" class="body">Verified from the local benchmark report: backend/benchmarks/controlled_enterprise_v1/results/baseline_retrieval_2026-09-05.md</text>
+
+  <g transform="translate(120 320)">
+    <rect class="card" width="360" height="220" rx="26"/>
+    <text x="34" y="68" class="label">Questions</text>
+    <text x="34" y="142" class="metric">10</text>
+    <text x="34" y="182" class="note">controlled benchmark cases</text>
+  </g>
+  <g transform="translate(520 320)">
+    <rect class="card" width="360" height="220" rx="26"/>
+    <text x="34" y="68" class="label">Recall@5</text>
+    <text x="34" y="142" class="metric">89%</text>
+    <rect x="34" y="170" width="286" height="12" rx="6" class="barBg"/>
+    <rect x="34" y="170" width="254" height="12" rx="6" class="bar"/>
+  </g>
+  <g transform="translate(920 320)">
+    <rect class="card" width="360" height="220" rx="26"/>
+    <text x="34" y="68" class="label">MRR</text>
+    <text x="34" y="142" class="metric">0.83</text>
+    <text x="34" y="182" class="note">mean reciprocal rank</text>
+  </g>
+  <g transform="translate(1320 320)">
+    <rect class="card" width="360" height="220" rx="26"/>
+    <text x="34" y="68" class="label">Source Grounding</text>
+    <text x="34" y="142" class="metric">89%</text>
+    <rect x="34" y="170" width="286" height="12" rx="6" class="barBg"/>
+    <rect x="34" y="170" width="254" height="12" rx="6" class="bar"/>
+  </g>
+
+  <g transform="translate(120 600)">
+    <rect class="card" width="760" height="258" rx="28"/>
+    <text x="34" y="62" class="label">Latency Breakdown</text>
+    <text x="34" y="116" class="body">Query embedding: 84.2 ms</text>
+    <text x="34" y="158" class="body">Lexical retrieval: 520.7 ms</text>
+    <text x="34" y="200" class="body">Vector retrieval: 409.2 ms</text>
+    <text x="34" y="242" class="body">Average total /ask latency: 1.01 s</text>
+  </g>
+  <g transform="translate(930 600)">
+    <rect class="card" width="750" height="258" rx="28"/>
+    <text x="34" y="62" class="label">Interpretation</text>
+    <text x="34" y="116" class="body">Hybrid retrieval and RRF are benchmarked separately.</text>
+    <text x="34" y="158" class="body">Answer accuracy is intentionally not auto-scored in this run.</text>
+    <text x="34" y="200" class="body">Report notes total latency is retrieval-only because generation was skipped.</text>
+  </g>
+</svg>

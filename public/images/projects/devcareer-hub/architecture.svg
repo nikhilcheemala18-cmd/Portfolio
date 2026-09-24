@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">DevCareer Hub architecture</title>
+  <desc id="desc">Architecture diagram for a Next.js content platform with public routes, admin CMS, authentication, service layer, validation, Mongoose models, and MongoDB Atlas.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#050507"/><stop offset="1" stop-color="#11101d"/></linearGradient>
+    <linearGradient id="card" x1="0" x2="1"><stop stop-color="#161522"/><stop offset="1" stop-color="#08070d"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000" flood-opacity=".38"/></filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2 2l9 5-9 5z" fill="#8b5cf6"/></marker>
+  </defs>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <circle cx="1110" cy="160" r="290" fill="#8b5cf6" opacity=".08"/>
+  <circle cx="250" cy="720" r="260" fill="#3b82f6" opacity=".06"/>
+  <text x="80" y="92" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">DevCareer Hub</text>
+  <text x="80" y="128" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="18">Developer career publishing platform with public content and admin CMS workflows</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#f2ecff" filter="url(#shadow)">
+    <rect x="96" y="230" width="250" height="92" rx="20" fill="url(#card)" stroke="#4c1d95"/><text x="158" y="284">Public Website</text>
+    <rect x="96" y="410" width="250" height="92" rx="20" fill="url(#card)" stroke="#4c1d95"/><text x="166" y="464">Admin CMS</text>
+    <rect x="445" y="230" width="250" height="92" rx="20" fill="url(#card)" stroke="#4c1d95"/><text x="506" y="284">Next.js App Router</text>
+    <rect x="445" y="410" width="250" height="92" rx="20" fill="url(#card)" stroke="#4c1d95"/><text x="504" y="464">Auth + Proxy</text>
+    <rect x="800" y="230" width="250" height="92" rx="20" fill="url(#card)" stroke="#4c1d95"/><text x="852" y="284">Service Layer</text>
+    <rect x="800" y="410" width="250" height="92" rx="20" fill="url(#card)" stroke="#4c1d95"/><text x="870" y="464">Validation</text>
+    <rect x="1088" y="320" width="250" height="92" rx="20" fill="url(#card)" stroke="#4c1d95"/><text x="1164" y="374">Mongoose</text>
+    <rect x="595" y="622" width="250" height="94" rx="20" fill="url(#card)" stroke="#7c3aed"/><text x="655" y="677">MongoDB Atlas</text>
+  </g>
+  <g stroke="#8b5cf6" stroke-width="3" fill="none" opacity=".82" marker-end="url(#arrow)">
+    <path d="M346 276h91"/><path d="M346 456h91"/><path d="M695 276h96"/><path d="M695 456h96"/><path d="M1050 276c54 10 62 28 68 44"/><path d="M1050 456c54-10 62-28 68-44"/><path d="M1213 412c-96 140-250 197-368 230"/><path d="M925 502c-34 70-78 96-120 120"/>
+  </g>
+  <g fill="#bca7ff" font-family="Inter, Arial, sans-serif" font-size="15" opacity=".78">
+    <text x="124" y="350">Jobs · Blog · Interview prep · Search</text>
+    <text x="118" y="530">Posts, jobs, categories, tags, media</text>
+    <text x="470" y="350">Route groups + shared layouts</text>
+    <text x="468" y="530">HTTP-only session cookie</text>
+    <text x="826" y="350">Server-only data access</text>
+    <text x="820" y="530">Zod schemas + status rules</text>
+  </g>
+</svg>

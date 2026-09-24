@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Employee Management System architecture</title>
+  <desc id="desc">Architecture diagram for a role-based employee management system with React, Redux, protected APIs, Express, JWT authentication, MongoDB collections, payroll, attendance, and dashboards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#050706"/><stop offset="1" stop-color="#07120b"/></linearGradient>
+    <linearGradient id="card" x1="0" x2="1"><stop stop-color="#111d16"/><stop offset="1" stop-color="#060b08"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000" flood-opacity=".4"/></filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2 2l9 5-9 5z" fill="#22c55e"/></marker>
+  </defs>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <circle cx="1120" cy="170" r="280" fill="#22c55e" opacity=".075"/>
+  <circle cx="260" cy="735" r="300" fill="#38bdf8" opacity=".052"/>
+  <text x="80" y="92" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Employee Management System</text>
+  <text x="80" y="128" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="18">Role-based HR workflows for onboarding, attendance, payroll, and branch operations</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#edfff3" filter="url(#shadow)">
+    <rect x="92" y="244" width="220" height="86" rx="18" fill="url(#card)" stroke="#14532d"/><text x="153" y="295">Admin</text>
+    <rect x="92" y="404" width="220" height="86" rx="18" fill="url(#card)" stroke="#14532d"/><text x="154" y="455">Owner</text>
+    <rect x="92" y="564" width="220" height="86" rx="18" fill="url(#card)" stroke="#14532d"/><text x="142" y="615">Operator</text>
+    <rect x="420" y="324" width="250" height="94" rx="20" fill="url(#card)" stroke="#14532d"/><text x="496" y="380">React + Redux</text>
+    <rect x="420" y="504" width="250" height="94" rx="20" fill="url(#card)" stroke="#14532d"/><text x="481" y="560">Protected Routes</text>
+    <rect x="790" y="324" width="250" height="94" rx="20" fill="url(#card)" stroke="#14532d"/><text x="850" y="380">Express APIs</text>
+    <rect x="790" y="504" width="250" height="94" rx="20" fill="url(#card)" stroke="#14532d"/><text x="842" y="560">JWT Auth</text>
+    <rect x="1130" y="414" width="230" height="94" rx="20" fill="url(#card)" stroke="#16a34a"/><text x="1184" y="470">MongoDB</text>
+  </g>
+  <g stroke="#22c55e" stroke-width="3" fill="none" opacity=".82" marker-end="url(#arrow)">
+    <path d="M312 287c54 20 72 55 102 83"/><path d="M312 447h100"/><path d="M312 607c54-20 72-55 102-83"/><path d="M670 371h112"/><path d="M670 551h112"/><path d="M1040 371c55 18 74 40 88 58"/><path d="M1040 551c55-18 74-40 88-58"/>
+  </g>
+  <g fill="#9df3b9" font-family="Inter, Arial, sans-serif" font-size="15" opacity=".78">
+    <text x="122" y="356">Global access and reports</text>
+    <text x="122" y="516">Branch employee operations</text>
+    <text x="122" y="676">Attendance and entry workflows</text>
+    <text x="448" y="446">Dashboards, forms, session state</text>
+    <text x="430" y="626">Role checks before screens</text>
+    <text x="812" y="446">Employees · Payroll · Attendance</text>
+    <text x="820" y="626">Signed API access</text>
+  </g>
+</svg>

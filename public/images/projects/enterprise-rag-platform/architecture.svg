@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise RAG Platform architecture diagram</title>
+  <desc id="desc">A professional architecture diagram showing document ingestion, retrieval indexes, hybrid ranking, LLM generation, and grounded API responses.</desc>
+  <defs>
+    <radialGradient id="bgGlow" cx="68%" cy="24%" r="70%">
+      <stop offset="0%" stop-color="#0f3b5f" stop-opacity=".38"/>
+      <stop offset="42%" stop-color="#07111d" stop-opacity=".42"/>
+      <stop offset="100%" stop-color="#050505" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827" stop-opacity=".92"/>
+      <stop offset="100%" stop-color="#07090d" stop-opacity=".96"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0" x2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity=".18"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity=".42"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#000000" flood-opacity=".45"/>
+    </filter>
+    <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .title{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:48px;font-weight:700;letter-spacing:-.02em;fill:#f4f7fb}
+      .eyebrow{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:18px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;fill:#38bdf8}
+      .subtitle{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:24px;fill:#94a3b8}
+      .label{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:24px;font-weight:700;fill:#eef4fb}
+      .small{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:18px;fill:#a6b4c5}
+      .tiny{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;fill:#6ddcff}
+      .mono{font-family:Consolas,Menlo,monospace;font-size:16px;fill:#9fb1c7}
+      .panel{fill:url(#panel);stroke:#243244;stroke-width:1.4;filter:url(#softShadow)}
+      .node{fill:#09131f;stroke:#2d435b;stroke-width:1.3}
+      .chip{fill:#0b1623;stroke:#1e354a;stroke-width:1}
+      .flow{stroke:url(#accentLine);stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.78}
+      .flowThin{stroke:#38bdf8;stroke-width:2;fill:none;stroke-linecap:round;opacity:.34}
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bgGlow)"/>
+  <path d="M0 870 C260 820 420 930 650 880 C880 830 960 720 1210 780 C1470 840 1630 760 1920 810 L1920 1080 L0 1080 Z" fill="#020304" opacity=".62"/>
+  <g opacity=".12">
+    <path d="M220 180 H1700" stroke="#38bdf8" stroke-width="1"/>
+    <path d="M220 350 H1700" stroke="#38bdf8" stroke-width="1"/>
+    <path d="M220 520 H1700" stroke="#38bdf8" stroke-width="1"/>
+    <path d="M220 690 H1700" stroke="#38bdf8" stroke-width="1"/>
+    <path d="M360 110 V900" stroke="#8b5cf6" stroke-width="1"/>
+    <path d="M680 110 V900" stroke="#8b5cf6" stroke-width="1"/>
+    <path d="M1000 110 V900" stroke="#8b5cf6" stroke-width="1"/>
+    <path d="M1320 110 V900" stroke="#8b5cf6" stroke-width="1"/>
+    <path d="M1640 110 V900" stroke="#8b5cf6" stroke-width="1"/>
+  </g>
+
+  <text x="128" y="120" class="eyebrow">Enterprise RAG Platform</text>
+  <text x="128" y="182" class="title">Grounded Document Intelligence Pipeline</text>
+  <text x="128" y="226" class="subtitle">From business files to hybrid retrieval, ranked context, Gemini answers, and source attribution.</text>
+
+  <g transform="translate(128 315)">
+    <rect class="panel" width="1664" height="560" rx="28"/>
+    <path class="flow" d="M177 279 H420 H645 H880 H1115 H1360"/>
+    <path class="flowThin" d="M648 206 C790 142 948 142 1090 206"/>
+    <path class="flowThin" d="M648 352 C790 416 948 416 1090 352"/>
+
+    <g transform="translate(52 92)">
+      <rect class="node" width="250" height="374" rx="24"/>
+      <text x="28" y="52" class="tiny">01 Input</text>
+      <text x="28" y="96" class="label">Business Files</text>
+      <text x="28" y="136" class="small">PDF, DOCX, XLSX, CSV</text>
+      <g transform="translate(28 178)">
+        <rect class="chip" width="86" height="38" rx="10"/>
+        <text x="22" y="25" class="mono">PDF</text>
+        <rect class="chip" x="102" width="94" height="38" rx="10"/>
+        <text x="126" y="25" class="mono">DOCX</text>
+        <rect class="chip" y="52" width="86" height="38" rx="10"/>
+        <text x="18" y="77" class="mono">XLSX</text>
+        <rect class="chip" x="102" y="52" width="94" height="38" rx="10"/>
+        <text x="128" y="77" class="mono">CSV</text>
+      </g>
+      <circle cx="224" cy="322" r="10" fill="#38bdf8" filter="url(#nodeGlow)"/>
+    </g>
+
+    <g transform="translate(375 92)">
+      <rect class="node" width="250" height="374" rx="24"/>
+      <text x="28" y="52" class="tiny">02 Processing</text>
+      <text x="28" y="96" class="label">Normalize + Chunk</text>
+      <text x="28" y="136" class="small">Parser abstraction, metadata, structure-aware chunks</text>
+      <g transform="translate(28 190)">
+        <path d="M0 0 H180" stroke="#334155" stroke-width="2"/>
+        <path d="M0 48 H180" stroke="#334155" stroke-width="2"/>
+        <path d="M0 96 H128" stroke="#334155" stroke-width="2"/>
+        <rect x="0" y="-18" width="72" height="36" rx="9" fill="#0d2134" stroke="#1e5b7b"/>
+        <text x="14" y="6" class="mono">raw</text>
+        <rect x="88" y="30" width="92" height="36" rx="9" fill="#0d2134" stroke="#1e5b7b"/>
+        <text x="105" y="54" class="mono">clean</text>
+        <rect x="0" y="78" width="132" height="36" rx="9" fill="#0d2134" stroke="#1e5b7b"/>
+        <text x="18" y="102" class="mono">chunks</text>
+      </g>
+    </g>
+
+    <g transform="translate(698 92)">
+      <rect class="node" width="250" height="374" rx="24"/>
+      <text x="28" y="52" class="tiny">03 Indexes</text>
+      <text x="28" y="96" class="label">Dual Retrieval</text>
+      <text x="28" y="136" class="small">PostgreSQL full-text plus pgvector similarity search</text>
+      <g transform="translate(28 190)">
+        <rect class="chip" width="194" height="54" rx="14"/>
+        <circle cx="28" cy="27" r="9" fill="#60a5fa"/>
+        <text x="52" y="34" class="mono">Full-text</text>
+        <rect class="chip" y="72" width="194" height="54" rx="14"/>
+        <circle cx="28" cy="99" r="9" fill="#34d399"/>
+        <text x="52" y="106" class="mono">pgvector</text>
+      </g>
+    </g>
+
+    <g transform="translate(1021 92)">
+      <rect class="node" width="250" height="374" rx="24"/>
+      <text x="28" y="52" class="tiny">04 Ranking</text>
+      <text x="28" y="96" class="label">Fusion Layer</text>
+      <text x="28" y="136" class="small">RRF combines lexical and semantic result sets</text>
+      <g transform="translate(42 204)">
+        <circle cx="38" cy="64" r="38" fill="#111827" stroke="#60a5fa" stroke-width="2"/>
+        <circle cx="128" cy="64" r="38" fill="#111827" stroke="#34d399" stroke-width="2"/>
+        <circle cx="83" cy="64" r="44" fill="#0b1725" stroke="#f59e0b" stroke-width="2"/>
+        <text x="52" y="70" class="mono">RRF</text>
+      </g>
+    </g>
+
+    <g transform="translate(1344 92)">
+      <rect class="node" width="250" height="374" rx="24"/>
+      <text x="28" y="52" class="tiny">05 Answer</text>
+      <text x="28" y="96" class="label">Gemini + Sources</text>
+      <text x="28" y="136" class="small">Context grounded response with source chunks returned by API</text>
+      <g transform="translate(28 188)">
+        <rect class="chip" width="190" height="52" rx="14"/>
+        <text x="22" y="33" class="mono">Grounded answer</text>
+        <rect class="chip" y="70" width="190" height="52" rx="14"/>
+        <text x="22" y="103" class="mono">Source chunks</text>
+        <rect class="chip" y="140" width="190" height="52" rx="14"/>
+        <text x="22" y="173" class="mono">REST response</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(128 920)">
+    <rect width="1664" height="76" rx="20" fill="#06080b" stroke="#1f2937"/>
+    <text x="32" y="48" class="small">Evaluation-ready pipeline: retrieval metrics, source grounding checks, latency breakdowns, and deterministic benchmark datasets.</text>
+    <text x="1388" y="48" class="mono" fill="#6ddcff">FastAPI - Supabase - pgvector - Gemini</text>
+  </g>
+</svg>

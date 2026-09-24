@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">AI Travel Booking Agent evaluation metrics</title>
+  <desc id="desc">Evaluation metrics from Flyo controlled HTTP scenarios, including workflow success, correction handling, extraction quality, and latency.</desc>
+  <defs>
+    <radialGradient id="bg" cx="76%" cy="18%" r="70%">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity=".34"/>
+      <stop offset="48%" stop-color="#07100d" stop-opacity=".82"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0d1a16"/>
+      <stop offset="100%" stop-color="#070908"/>
+    </linearGradient>
+    <style>
+      text{font-family:Inter,Segoe UI,Arial,sans-serif}
+      .eyebrow{font-size:18px;font-weight:800;letter-spacing:.18em;fill:#34d399;text-transform:uppercase}
+      .title{font-size:52px;font-weight:760;letter-spacing:-.03em;fill:#f5f7fb}
+      .body{font-size:22px;fill:#9aa9bb}
+      .metric{font-size:52px;font-weight:780;letter-spacing:-.04em;fill:#f8fafc}
+      .label{font-size:17px;font-weight:760;letter-spacing:.12em;fill:#5eead4;text-transform:uppercase}
+      .note{font-size:18px;fill:#9aa9bb}
+      .card{fill:url(#card);stroke:#214038;stroke-width:1.4}
+      .barBg{fill:#10201b}
+      .bar{fill:#34d399}
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <text x="120" y="118" class="eyebrow">Evaluation Snapshot</text>
+  <text x="120" y="184" class="title">Flyo Agent Workflow Metrics</text>
+  <text x="120" y="232" class="body">Verified from the local landing implementation: frontend/src/landing/LandingA/LandingA.jsx</text>
+
+  <g transform="translate(120 320)">
+    <rect class="card" width="520" height="220" rx="26"/>
+    <text x="34" y="68" class="label">Scripted Workflow Success</text>
+    <text x="34" y="142" class="metric">97.2%</text>
+    <text x="34" y="182" class="note">35 / 36 controlled HTTP scenarios</text>
+  </g>
+  <g transform="translate(700 320)">
+    <rect class="card" width="520" height="220" rx="26"/>
+    <text x="34" y="68" class="label">Correction Handling</text>
+    <text x="34" y="142" class="metric">100%</text>
+    <text x="34" y="182" class="note">20 / 20 scenarios</text>
+  </g>
+  <g transform="translate(1280 320)">
+    <rect class="card" width="520" height="220" rx="26"/>
+    <text x="34" y="68" class="label">HTTP P95 Latency</text>
+    <text x="34" y="142" class="metric">2.18s</text>
+    <text x="34" y="182" class="note">45 localhost API requests using real OpenAI calls</text>
+  </g>
+
+  <g transform="translate(120 610)">
+    <rect class="card" width="810" height="250" rx="28"/>
+    <text x="34" y="66" class="label">Structured Extraction</text>
+    <text x="34" y="134" class="metric">90.9%</text>
+    <text x="34" y="180" class="body">130 / 143 field comparisons</text>
+    <rect x="34" y="206" width="690" height="12" rx="6" class="barBg"/>
+    <rect x="34" y="206" width="627" height="12" rx="6" class="bar"/>
+  </g>
+  <g transform="translate(990 610)">
+    <rect class="card" width="810" height="250" rx="28"/>
+    <text x="34" y="66" class="label">Complete Record Extraction</text>
+    <text x="34" y="134" class="metric">88.6%</text>
+    <text x="34" y="180" class="body">31 / 35 complete records</text>
+    <rect x="34" y="206" width="690" height="12" rx="6" class="barBg"/>
+    <rect x="34" y="206" width="611" height="12" rx="6" class="bar"/>
+  </g>
+</svg>

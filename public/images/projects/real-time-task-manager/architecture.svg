@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Real-Time Task Manager architecture</title>
+  <desc id="desc">Architecture diagram for a MERN task manager with React Vite, Redux Toolkit, React Query, Express, MongoDB, Mongoose, JWT auth, and Socket.io realtime collaboration.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#050608"/><stop offset="1" stop-color="#101520"/></linearGradient>
+    <linearGradient id="card" x1="0" x2="1"><stop stop-color="#121826"/><stop offset="1" stop-color="#070a10"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000" flood-opacity=".4"/></filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2 2l9 5-9 5z" fill="#38bdf8"/></marker>
+  </defs>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <circle cx="1120" cy="170" r="285" fill="#38bdf8" opacity=".075"/>
+  <circle cx="260" cy="735" r="290" fill="#f59e0b" opacity=".05"/>
+  <text x="80" y="92" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Real-Time Task Manager</text>
+  <text x="80" y="128" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="18">Collaborative MERN task workspace with boards, cards, comments, activity, and realtime sync</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#edf8ff" filter="url(#shadow)">
+    <rect x="90" y="252" width="230" height="88" rx="18" fill="url(#card)" stroke="#155e75"/><text x="142" y="304">React Vite UI</text>
+    <rect x="90" y="424" width="230" height="88" rx="18" fill="url(#card)" stroke="#155e75"/><text x="126" y="476">Redux + Query</text>
+    <rect x="420" y="252" width="245" height="88" rx="18" fill="url(#card)" stroke="#155e75"/><text x="474" y="304">Route Guards</text>
+    <rect x="420" y="424" width="245" height="88" rx="18" fill="url(#card)" stroke="#155e75"/><text x="488" y="476">Axios Client</text>
+    <rect x="770" y="252" width="245" height="88" rx="18" fill="url(#card)" stroke="#155e75"/><text x="838" y="304">Express API</text>
+    <rect x="770" y="424" width="245" height="88" rx="18" fill="url(#card)" stroke="#155e75"/><text x="836" y="476">Socket.io</text>
+    <rect x="1110" y="252" width="230" height="88" rx="18" fill="url(#card)" stroke="#155e75"/><text x="1182" y="304">MongoDB</text>
+    <rect x="1110" y="424" width="230" height="88" rx="18" fill="url(#card)" stroke="#155e75"/><text x="1168" y="476">Mongoose</text>
+    <rect x="485" y="630" width="470" height="96" rx="22" fill="url(#card)" stroke="#38bdf8"/><text x="590" y="688">Workspaces · Boards · Lists · Cards</text>
+  </g>
+  <g stroke="#38bdf8" stroke-width="3" fill="none" opacity=".82" marker-end="url(#arrow)">
+    <path d="M320 296h92"/><path d="M320 468h92"/><path d="M665 296h96"/><path d="M665 468h96"/><path d="M1015 296h86"/><path d="M1015 468h86"/><path d="M892 512c-25 64-74 92-140 118"/><path d="M543 512c24 64 74 92 140 118"/>
+  </g>
+  <g fill="#a9e7ff" font-family="Inter, Arial, sans-serif" font-size="15" opacity=".78">
+    <text x="122" y="368">Home, auth, dashboard, board views</text>
+    <text x="112" y="540">Client cache + app state</text>
+    <text x="448" y="368">Public/protected flows</text>
+    <text x="448" y="540">API module per feature</text>
+    <text x="800" y="368">Auth, boards, cards, comments</text>
+    <text x="804" y="540">Realtime room updates</text>
+  </g>
+</svg>
