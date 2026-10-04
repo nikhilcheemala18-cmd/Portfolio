@@ -1,20 +1,20 @@
 import type { NotebookCategory, NotebookEntry } from "@/types/builders-lab";
 
-const placeholderSections = (
+const frameworkSections = (
   subject: string,
   angle: string,
 ): NotebookEntry["sections"] => [
   {
     title: "Purpose",
-    body: `Placeholder for why this ${subject} exists, what problem it helps solve, and when I would use it while building a project.`,
+    body: `This ${subject} defines the kind of evidence I want to keep while building: what I tried, why it mattered, what changed, and how it affected the system.`,
   },
   {
-    title: "Current Structure",
-    body: `Placeholder for the main checklist, decision points, artifacts, and examples that will make this ${subject} useful to a reader.`,
+    title: "Working Structure",
+    body: "The page uses a repeatable structure so the notes stay readable: context, decision or experiment, implementation detail, observation, result, and follow-up.",
   },
   {
-    title: "What I Will Add Later",
-    body: `Placeholder for project-specific examples, screenshots, diagrams, tradeoffs, and notes from real implementation work around ${angle}.`,
+    title: "Evidence To Add",
+    body: `As the portfolio grows, this page should include project-specific examples, screenshots, diagrams, tradeoffs, and measured observations around ${angle}.`,
   },
 ];
 
@@ -29,8 +29,9 @@ export const notebookCategories: NotebookCategory[] = [
     summary:
       "These are practical working habits I use to slow down before coding, understand the problem clearly, make better technical decisions, and build projects that feel closer to real software products than quick demos.",
     intro: [
-      "These playbooks are not fixed rules or a perfect process. They are notes I use and refine as I build more systems.",
+      "These playbooks are not fixed rules or a perfect process. They are working notes I use and refine as I build more systems.",
       "The goal is simple: understand the problem before choosing tools, define the smallest useful version, think through the backend and data flow, test the important paths, and document enough for another person to understand the project.",
+      "I use AI assistants as part of my workflow, but I do not want speed to replace engineering ownership. These notes help me keep requirements, decisions, checkpoints, experiments, and handoff context visible while building.",
       "I like working on projects where backend engineering, data, APIs, AI models, and real user workflows come together. These notes help me organize that thinking.",
     ],
     principles: [
@@ -41,7 +42,7 @@ export const notebookCategories: NotebookCategory[] = [
       "Evaluation before claiming success",
       "Documentation before calling it finished",
     ],
-    status: "Draft",
+    status: "V1",
     featured: true,
     entries: [
       {
@@ -51,9 +52,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Workflow",
         summary:
           "How I move from a rough idea to a clearer project direction before jumping into implementation.",
-        status: "Draft",
+        status: "V1",
         tags: ["Planning", "Scope", "Product Thinking"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Why this matters",
@@ -85,9 +86,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Playbook",
         summary:
           "How I convert a broad project idea into clear requirements, constraints, and acceptance criteria.",
-        status: "Draft",
+        status: "V1",
         tags: ["Requirements", "SRS", "Scope"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Why this matters",
@@ -121,9 +122,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Checklist",
         summary:
           "The backend planning checklist I use for APIs, data models, validation, errors, and testing.",
-        status: "Draft",
+        status: "V1",
         tags: ["Backend", "APIs", "Databases"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Why this matters",
@@ -158,9 +159,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Checklist",
         summary:
           "How I think about LLM-powered features, RAG pipelines, tool calling, validation, and failure handling.",
-        status: "Draft",
+        status: "V1",
         tags: ["GenAI", "RAG", "Agents"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Why this matters",
@@ -194,9 +195,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Playbook",
         summary:
           "How I think about reliability for backend workflows, RAG outputs, and agent behavior.",
-        status: "Draft",
+        status: "V1",
         tags: ["Testing", "Evaluation", "Reliability"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Why this matters",
@@ -231,9 +232,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Playbook",
         summary:
           "How I document projects so another person can understand the setup, architecture, decisions, and limitations.",
-        status: "Draft",
+        status: "V1",
         tags: ["Documentation", "README", "Handoff"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Why this matters",
@@ -271,7 +272,7 @@ export const notebookCategories: NotebookCategory[] = [
     description:
       "How I think through system structure, data flow, backend boundaries, AI components, and tradeoffs.",
     summary:
-      "These notes are draft architecture writeups for my projects. They are meant to explain how each system is organized, where the important boundaries are, what decisions shaped the design, and what I would improve as the project grows.",
+      "These notes explain how each system is organized, where the important boundaries are, what decisions shaped the design, and what I would improve as the project grows.",
     intro: [
       "Architecture notes help me separate the idea of a project from the actual system that has to support it. I use them to reason about data flow, backend responsibilities, AI components, frontend boundaries, and failure points.",
       "I do not treat these as perfect final blueprints. They are working documents that can evolve as I learn more about the project, test real workflows, and discover better implementation choices.",
@@ -285,7 +286,7 @@ export const notebookCategories: NotebookCategory[] = [
       "Write down tradeoffs, not only final choices",
       "Keep future scaling paths clear",
     ],
-    status: "Draft",
+    status: "V1",
     entries: [
       {
         id: "enterprise-rag-architecture",
@@ -294,9 +295,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Architecture",
         summary:
           "How the Enterprise RAG Platform is organized around document ingestion, indexing, hybrid retrieval, ranking, and grounded answer generation.",
-        status: "Draft",
+        status: "V1",
         tags: ["RAG", "FastAPI", "PostgreSQL"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "System goal",
@@ -341,9 +342,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Architecture",
         summary:
           "How the travel agent is structured around planning, tool execution, validation, fallbacks, and itinerary generation.",
-        status: "Draft",
+        status: "V1",
         tags: ["Agents", "LLMs", "Workflows"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "System goal",
@@ -385,9 +386,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Architecture",
         summary:
           "How the task manager is structured across frontend state, backend modules, MongoDB models, authentication, and real-time collaboration foundations.",
-        status: "Draft",
+        status: "V1",
         tags: ["MERN", "Socket.io", "MongoDB"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "System goal",
@@ -430,9 +431,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Architecture",
         summary:
           "How the developer career platform is split between public content, admin CMS workflows, MongoDB data, authentication, SEO, and publishing.",
-        status: "Draft",
+        status: "V1",
         tags: ["Next.js", "CMS", "MongoDB"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "System goal",
@@ -468,9 +469,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Template",
         summary:
           "A reusable checklist I can use before writing or publishing architecture notes for any project.",
-        status: "Draft",
+        status: "V1",
         tags: ["Template", "System Design", "Review"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Purpose",
@@ -522,7 +523,7 @@ export const notebookCategories: NotebookCategory[] = [
       "Keep notes understandable to future me",
       "Update conclusions when experiments prove them wrong",
     ],
-    status: "Draft",
+    status: "V1",
     entries: [
       {
         id: "retrieval-strategy-notes",
@@ -531,9 +532,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Research",
         summary:
           "A practical comparison of retrieval approaches for RAG systems: vector search, full-text search, hybrid retrieval, fusion, and reranking.",
-        status: "Draft",
+        status: "V1",
         tags: ["Retrieval", "Search", "RAG"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Research question",
@@ -568,9 +569,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Research",
         summary:
           "Research notes on planning, tool execution, validation, fallbacks, and bounded agent workflows.",
-        status: "Draft",
+        status: "V1",
         tags: ["Agents", "LangGraph", "Tool Calling"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Research question",
@@ -606,9 +607,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Research",
         summary:
           "How I think about structured outputs, validation, fallback behavior, and avoiding unsupported AI responses.",
-        status: "Draft",
+        status: "V1",
         tags: ["LLMs", "Validation", "Structured Outputs"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Research question",
@@ -644,9 +645,9 @@ export const notebookCategories: NotebookCategory[] = [
         type: "Research",
         summary:
           "A practical note structure for understanding the user problem, existing products, core workflows, and useful feature scope before building.",
-        status: "Draft",
+        status: "V1",
         tags: ["Discovery", "Product Thinking", "Scope"],
-        updatedAt: "Draft for review",
+        updatedAt: "Initial public version",
         sections: [
           {
             title: "Research question",
@@ -687,7 +688,7 @@ export const notebookCategories: NotebookCategory[] = [
       "Technical logs for prototypes, tests, failures, findings, and iteration notes.",
     summary:
       "A running record of what I tested, what worked, what failed, and what I learned while building AI and backend systems.",
-    status: "Planned",
+    status: "Framework",
     entries: [
       {
         id: "tool-calling-tests",
@@ -695,11 +696,11 @@ export const notebookCategories: NotebookCategory[] = [
         title: "Prompt and Tool Calling Tests",
         type: "Experiment",
         summary:
-          "A placeholder for tracking prompt variants, structured outputs, tool execution behavior, and fallback cases.",
-        status: "Planned",
+          "A working format for tracking prompt variants, structured outputs, tool execution behavior, and fallback cases.",
+        status: "Framework",
         tags: ["LLMs", "Tool Calling", "Validation"],
-        updatedAt: "Structure draft",
-        sections: placeholderSections("experiment log", "tool calling"),
+        updatedAt: "Initial framework",
+        sections: frameworkSections("experiment log", "tool calling"),
       },
       {
         id: "retrieval-quality-experiments",
@@ -707,11 +708,11 @@ export const notebookCategories: NotebookCategory[] = [
         title: "Retrieval Quality Experiments",
         type: "Experiment",
         summary:
-          "A placeholder for recording chunking experiments, embedding tests, search failures, and retrieval evaluation observations.",
-        status: "Planned",
+          "A working format for recording chunking experiments, embedding tests, search failures, and retrieval evaluation observations.",
+        status: "Framework",
         tags: ["Embeddings", "Chunking", "Evaluation"],
-        updatedAt: "Structure draft",
-        sections: placeholderSections(
+        updatedAt: "Initial framework",
+        sections: frameworkSections(
           "experiment log",
           "retrieval quality",
         ),
@@ -727,7 +728,7 @@ export const notebookCategories: NotebookCategory[] = [
       "Product ideas, learning directions, systems I want to build, and problems I want to explore.",
     summary:
       "A place for promising project ideas and future technical directions before they become fully scoped builds.",
-    status: "Planned",
+    status: "Framework",
     entries: [
       {
         id: "ai-knowledge-workspace",
@@ -735,11 +736,11 @@ export const notebookCategories: NotebookCategory[] = [
         title: "AI Knowledge Workspace",
         type: "Idea",
         summary:
-          "A placeholder for a future workspace that connects documents, research notes, retrieval, agents, and task execution.",
-        status: "Planned",
+          "An exploration note for a future workspace that connects documents, research notes, retrieval, agents, and task execution.",
+        status: "Framework",
         tags: ["RAG", "Agents", "Product"],
-        updatedAt: "Structure draft",
-        sections: placeholderSections("idea note", "AI knowledge workspaces"),
+        updatedAt: "Initial framework",
+        sections: frameworkSections("idea note", "AI knowledge workspaces"),
       },
       {
         id: "backend-observability-playground",
@@ -747,11 +748,11 @@ export const notebookCategories: NotebookCategory[] = [
         title: "Backend Observability Playground",
         type: "Idea",
         summary:
-          "A placeholder for a future project around logs, metrics, traces, background jobs, and production-style monitoring.",
-        status: "Planned",
+          "An exploration note for a future project around logs, metrics, traces, background jobs, and production-style monitoring.",
+        status: "Framework",
         tags: ["Backend", "Observability", "Systems"],
-        updatedAt: "Structure draft",
-        sections: placeholderSections(
+        updatedAt: "Initial framework",
+        sections: frameworkSections(
           "idea note",
           "backend observability",
         ),

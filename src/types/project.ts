@@ -20,6 +20,33 @@ export type ProjectImage = {
   height?: number;
 };
 
+export type ProjectExplanationList = {
+  title: string;
+  items: string[];
+};
+
+export type ProjectLongSection = {
+  title: string;
+  body: string;
+};
+
+export type ProjectExplanation = {
+  short: {
+    overview: string;
+    lists: ProjectExplanationList[];
+  };
+  medium: {
+    problem: string;
+    solution: string;
+    technical: string;
+    decision?: string;
+  };
+  long: {
+    intro: string;
+    sections: ProjectLongSection[];
+  };
+};
+
 export type Project = {
   id: string;
   title: string;
@@ -40,6 +67,7 @@ export type Project = {
   variant?: ProjectCardVariant;
   accent?: string;
   mediaPosition?: "default" | "overlap" | "left" | "right";
+  explanation?: ProjectExplanation;
 };
 
 export type ProjectCategory = {

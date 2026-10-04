@@ -25,9 +25,9 @@ export default function NotebookPage() {
             Process, architecture, research, experiments, and ideas.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground">
-            This is the structure for a public notebook that will show how I
-            think through projects, document systems, evaluate decisions, and
-            turn ideas into working software.
+            A public engineering notebook for how I plan projects, document
+            systems, evaluate decisions, work with AI assistants, and turn
+            ideas into reliable software.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export default function NotebookPage() {
                     {category.summary}
                   </p>
                   <div className="border-t border-border/45 pt-4 text-xs text-muted-foreground">
-                    {category.entries.length} draft pages
+                    {category.entries.length} pages
                   </div>
                 </CardContent>
               </Card>
@@ -74,14 +74,14 @@ export default function NotebookPage() {
           <div className="mb-6 flex items-end justify-between gap-4">
             <div>
               <p className="mb-2 text-xs font-semibold uppercase tracking-normal text-primary">
-                Draft Pages
+                Notebook Pages
               </p>
               <h2 className="font-heading text-2xl font-semibold text-foreground">
                 Notebook index
               </h2>
             </div>
             <p className="hidden text-sm text-muted-foreground md:block">
-              Placeholder entries ready for real content.
+              Initial public version with working notes and frameworks.
             </p>
           </div>
 

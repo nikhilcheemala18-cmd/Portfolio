@@ -1,4 +1,4 @@
-export type NotebookStatus = "Planned" | "Draft" | "In Progress" | "Reference";
+export type NotebookStatus = "V1" | "In Progress" | "Reference" | "Framework";
 
 export type NotebookSection = {
   title: string;

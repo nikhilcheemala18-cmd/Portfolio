@@ -9,7 +9,7 @@ import { ProjectGallery } from "@/components/projects/project-gallery";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import type { Project } from "@/types/project";
+import type { Project, ProjectExplanation } from "@/types/project";
 
 type ExplanationDepth = "short" | "medium" | "long";
 
@@ -149,7 +149,6 @@ export function ProjectExplanationDialog({
           <ProjectExplanationContent
             activeDepth={activeDepth}
             explanation={explanation}
-            project={project}
           />
 
           <div className="mt-auto flex flex-wrap gap-2 border-t border-white/[0.08] pt-4">
@@ -191,28 +190,28 @@ export function ProjectExplanationDialog({
 function ProjectExplanationContent({
   activeDepth,
   explanation,
-  project,
 }: {
   activeDepth: ExplanationDepth;
-  explanation: ReturnType<typeof getProjectExplanation>;
-  project: Project;
+  explanation: ProjectExplanation;
 }) {
   if (activeDepth === "short") {
     return (
       <ScrollableExplanationPanel>
-        <div className="space-y-3 text-sm leading-6 text-muted-foreground">
-          <p>{explanation.short}</p>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.slice(0, 8).map((technology) => (
-              <Badge
-                key={technology}
-                variant="secondary"
-                className="border border-white/[0.07] bg-secondary/55 font-mono text-[0.68rem] text-[#e4e9ef]"
-              >
-                {technology}
-              </Badge>
-            ))}
-          </div>
+        <div className="space-y-5 text-sm leading-6 text-muted-foreground">
+          <p>{explanation.short.overview}</p>
+          {explanation.short.lists.map((list) => (
+            <div key={list.title}>
+              <h4 className="text-sm font-semibold text-foreground">{list.title}</h4>
+              <ul className="mt-2 grid gap-2 sm:grid-cols-2">
+                {list.items.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-[color:var(--project-accent)]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </ScrollableExplanationPanel>
     );
@@ -222,26 +221,26 @@ function ProjectExplanationContent({
     return (
       <ScrollableExplanationPanel>
         <div className="space-y-4 text-sm leading-6 text-muted-foreground">
-          <p>{explanation.medium}</p>
           <div>
-            <h4 className="text-sm font-semibold text-foreground">
-              Architecture Placeholder
-            </h4>
-            <p className="mt-2">{explanation.architecture}</p>
+            <h4 className="text-sm font-semibold text-foreground">Problem</h4>
+            <p className="mt-2">{explanation.medium.problem}</p>
           </div>
-          <ul className="space-y-2">
-            {[
-              "Problem context placeholder",
-              "Core engineering approach placeholder",
-              "System boundary and trade-off placeholder",
-              "Proof/result placeholder",
-            ].map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="mt-2 size-1.5 rounded-full bg-[color:var(--project-accent)]" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <h4 className="text-sm font-semibold text-foreground">What I Built</h4>
+            <p className="mt-2">{explanation.medium.solution}</p>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-foreground">Technical Flow</h4>
+            <p className="mt-2">{explanation.medium.technical}</p>
+          </div>
+          {explanation.medium.decision ? (
+            <div>
+              <h4 className="text-sm font-semibold text-foreground">
+                Why This Approach
+              </h4>
+              <p className="mt-2">{explanation.medium.decision}</p>
+            </div>
+          ) : null}
         </div>
       </ScrollableExplanationPanel>
     );
@@ -250,17 +249,10 @@ function ProjectExplanationContent({
   return (
     <ScrollableExplanationPanel isLongForm>
       <div className="space-y-5 text-sm leading-6 text-muted-foreground">
-        <p>{explanation.longIntro}</p>
-        {[
-          ["Problem", "Replace this with the complete problem statement, target user, constraints, and why this project was worth building."],
-          ["Solution", "Replace this with the end-to-end solution walkthrough, including the main application flow and the responsibilities of each subsystem."],
-          ["Architecture", explanation.architecture],
-          ["Implementation", "Replace this with implementation details, key modules, API boundaries, database choices, validation strategy, and important engineering decisions."],
-          ["Evaluation", "Replace this with verified evaluation results, testing evidence, benchmark context, and any limitations or future improvements."],
-          ["Takeaways", "Replace this with your personal learning, trade-offs, what you would improve next, and how the project shaped your backend or AI engineering thinking."],
-        ].map(([heading, body]) => (
-          <div key={heading}>
-            <h4 className="text-sm font-semibold text-foreground">{heading}</h4>
+        <p>{explanation.long.intro}</p>
+        {explanation.long.sections.map(({ title, body }) => (
+          <div key={title}>
+            <h4 className="text-sm font-semibold text-foreground">{title}</h4>
             <p className="mt-2">{body}</p>
           </div>
         ))}
@@ -290,15 +282,68 @@ function ScrollableExplanationPanel({
   );
 }
 
-function getProjectExplanation(project: Project) {
+function getProjectExplanation(project: Project): ProjectExplanation {
+  if (project.explanation) {
+    return project.explanation;
+  }
+
+  const architecture = getArchitecturePlaceholder(project);
+
   return {
-    short:
-      "Short explanation placeholder. Replace this with a concise summary of the problem, the solution, and the strongest proof point for this project.",
-    medium:
-      "Medium explanation placeholder. Replace this with a recruiter-friendly overview that explains the workflow, the system design, and the main engineering decisions without becoming a full case study.",
-    longIntro:
-      "Long-form explanation placeholder. This area is intentionally scrollable so you can later add a complete walkthrough without forcing the dialog to grow beyond the viewport.",
-    architecture: getArchitecturePlaceholder(project),
+    short: {
+      overview:
+        "Short explanation placeholder. Replace this with a concise summary of the problem, the solution, and the strongest proof point for this project.",
+      lists: [
+        {
+          title: "Current Placeholder",
+          items: project.technologies.slice(0, 8),
+        },
+      ],
+    },
+    medium: {
+      problem:
+        "Medium explanation placeholder. Replace this with a recruiter-friendly overview of the problem this project solves.",
+      solution:
+        "Replace this with the main solution flow and the user-facing value of the project.",
+      technical:
+        "Replace this with the system design and main engineering decisions without turning it into a full case study.",
+      decision: architecture,
+    },
+    long: {
+      intro:
+        "Long-form explanation placeholder. This area is intentionally scrollable so you can later add a complete walkthrough without forcing the dialog to grow beyond the viewport.",
+      sections: [
+        {
+          title: "Problem",
+          body:
+            "Replace this with the complete problem statement, target user, constraints, and why this project was worth building.",
+        },
+        {
+          title: "Solution",
+          body:
+            "Replace this with the end-to-end solution walkthrough, including the main application flow and the responsibilities of each subsystem.",
+        },
+        {
+          title: "Architecture",
+          body: architecture,
+        },
+        {
+          title: "Implementation",
+          body:
+            "Replace this with implementation details, key modules, API boundaries, database choices, validation strategy, and important engineering decisions.",
+        },
+        {
+          title: "Evaluation",
+          body:
+            "Replace this with verified evaluation results, testing evidence, benchmark context, and any limitations or future improvements.",
+        },
+        {
+          title: "Takeaways",
+          body:
+            "Replace this with your personal learning, trade-offs, what you would improve next, and how the project shaped your backend or AI engineering thinking.",
+        },
+      ],
+    },
   };
 }
 
