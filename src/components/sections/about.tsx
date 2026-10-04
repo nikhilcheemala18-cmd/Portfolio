@@ -9,7 +9,7 @@ const aboutProfile = {
   role: "Backend & Generative AI Engineer",
   location: "Hyderabad, India",
   imageSrc: null as string | null,
-  resumeHref: "",
+  resumeHref: "/resume/nikhil-cheemala-resume.pdf",
 };
 
 const focusAreas = [
