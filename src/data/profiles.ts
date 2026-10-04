@@ -32,11 +32,12 @@ export const codingProfiles: CodingProfile[] = [
     rank: "Global Rank 300",
   },
   {
-    platform: "github",
-    name: "GitHub",
-    username: "nikhilcheemala18-cmd",
-    profileUrl: "https://github.com/nikhilcheemala18-cmd",
-    badge: "Code portfolio",
-    note: "Repository and contribution statistics can be added later.",
+    platform: "chess",
+    name: "Chess.com",
+    username: "nikhil_cheemala",
+    profileUrl: "https://www.chess.com/member/nikhil_cheemala",
+    rapidRating: "1609",
+    blitzRating: "968",
+    tags: ["Pattern Recognition", "Critical Thinking"],
   },
 ];

@@ -18,7 +18,7 @@ type FilterOption = {
 const featuredProjectIds = [
   "enterprise-rag-platform",
   "ai-travel-booking-agent",
-  "devcareer-hub",
+  "employee-management-system",
 ];
 
 const filterOptions: FilterOption[] = [
@@ -29,7 +29,7 @@ const filterOptions: FilterOption[] = [
 ];
 
 export function ProjectExplorer({ projects }: ProjectExplorerProps) {
-  const [activeFilter, setActiveFilter] = useState<ProjectFilter>("all");
+  const [activeFilter, setActiveFilter] = useState<ProjectFilter | null>(null);
 
   const featuredProjects = featuredProjectIds
     .map((id) => projects.find((project) => project.id === id))
@@ -38,7 +38,7 @@ export function ProjectExplorer({ projects }: ProjectExplorerProps) {
   const filteredProjects = useMemo(
     () =>
       projects.filter((project) => {
-        if (activeFilter === "all") {
+        if (!activeFilter || activeFilter === "all") {
           return true;
         }
 
@@ -47,8 +47,10 @@ export function ProjectExplorer({ projects }: ProjectExplorerProps) {
     [activeFilter, projects]
   );
 
-  const visibleProjects =
-    activeFilter === "all" ? featuredProjects : filteredProjects;
+  const isInitialFeaturedView = activeFilter === null;
+  const visibleProjects = isInitialFeaturedView
+    ? featuredProjects
+    : filteredProjects;
 
   return (
     <div className="-mt-4 space-y-5 md:-mt-5">
@@ -82,7 +84,7 @@ export function ProjectExplorer({ projects }: ProjectExplorerProps) {
           <ProjectCard
             key={project.id}
             project={project}
-            mode={activeFilter === "all" ? "featured" : "standard"}
+            mode={isInitialFeaturedView ? "featured" : "standard"}
           />
         ))}
       </div>

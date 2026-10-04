@@ -1,6 +1,6 @@
 import { ExternalLink, GraduationCap } from "lucide-react";
 import type { CSSProperties, ElementType } from "react";
-import { SiCodechef, SiGithub, SiLeetcode } from "react-icons/si";
+import { SiChessdotcom, SiCodechef, SiLeetcode } from "react-icons/si";
 
 import { Card, CardContent } from "@/components/ui/card";
 import type { CodingProfile } from "@/types/profile";
@@ -33,11 +33,11 @@ const platformMeta = {
     surface: "rgba(56, 189, 248, 0.12)",
     label: "Interview preparation",
   },
-  github: {
-    icon: SiGithub,
-    accent: "#e2e8f0",
-    surface: "rgba(226, 232, 240, 0.1)",
-    label: "Code and repositories",
+  chess: {
+    icon: SiChessdotcom,
+    accent: "#7fa650",
+    surface: "rgba(127, 166, 80, 0.13)",
+    label: "Strategic problem solving",
   },
 } satisfies Record<
   CodingProfile["platform"],
@@ -55,6 +55,8 @@ export function CodingProfileCard({ profile }: CodingProfileCardProps) {
   const stats: ProfileStat[] = [
     { label: "Problems Solved", value: profile.problemsSolved },
     { label: "Rating", value: profile.rating },
+    { label: "Rapid Rating", value: profile.rapidRating },
+    { label: "Blitz Rating", value: profile.blitzRating },
     { label: "Contests Attended", value: profile.contestsAttended },
     { label: "Rank", value: profile.rank },
     { label: "Badge", value: profile.badge },
@@ -124,6 +126,18 @@ export function CodingProfileCard({ profile }: CodingProfileCardProps) {
           <p className="-mt-3 text-sm leading-6 text-muted-foreground">
             {profile.note}
           </p>
+        ) : null}
+        {profile.tags?.length ? (
+          <div className="-mt-3 flex flex-wrap gap-2">
+            {profile.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-md border border-white/[0.08] bg-background/35 px-2.5 py-1 text-xs font-medium text-muted-foreground"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         ) : null}
       </CardContent>
     </Card>
